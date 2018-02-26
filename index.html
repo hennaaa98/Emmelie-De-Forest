@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109483701-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-109483701-1');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Emmelie De Forest</title>
+    <link rel="icon" href="/img/play.png">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Advent+Pro:100,200,300,400,500,600,700" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        var video = $('#video')[0];
+        
+        $("#pause").click(function(){
+          video.pause();
+        });
+
+        $("#play").click(function(){
+          video.play();
+        });
+
+        $("#fullscreen").click(function(){
+          if(video.requestFullscreen){
+            video.requestFullscreen();
+          } 
+          else if (video.webkitRequestFullscreen){
+            video.webkitRequestFullscreen();
+          }
+          else if (video.mozRequestFullScreen){
+            video.mozRequestFullScreen();
+          }
+          else if (video.msRequestFullscreen){
+            video.msRequestFullscreen();
+          }   
+        });
+    });
+    </script>
+  </head>
+
+  <body>
+    <div class="container">
+      <video id="video"  src="/video/version1.mp4" autoplay loop></video>
+      
+      <div class="nav store">
+        <a href="http://www.pledgemusic.com/projects/emmelie-de-forest-new-ep/exclusives" target="_blank">STORE</a>
+      </div>
+      <div class="nav ep">
+        <a href="https://www.pledgemusic.com/projects/emmelie-de-forest-new-ep" target="_blank">GET THE EP</a>
+      </div>
+      <div class="nav tour">
+        <a href="https://www.songkick.com/artists/6943859-emmelie-de-forest" target="_blank">TOUR</a>
+      </div>
+
+      <div class="controls">
+        <a href="#" id="pause" title="pause"><img src="/img/pause.png"/></a>
+        <a href="#" id="play" title="afspil"><img src="/img/play.png"/></a>
+        <a href="#" id="fullscreen" title="fuld skærm"><img src="/img/circle.png"/></a>
+      </div>
+    </div>
+  </body>
+</html>
