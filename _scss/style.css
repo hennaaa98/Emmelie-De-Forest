@@ -1,0 +1,30 @@
+html {
+  background-color: blue;
+  color: #000; }
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+.container {
+  display: grid;
+  grip-gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 100px 250px 1fr 50px;
+  grid-template-areas: "store ep tour" "video video video" "controls controls controls"; }
+
+.store {
+  background-color: red;
+  grid-area: store; }
+
+.get-the-ep {
+  grid-area: ep; }
+
+.tour {
+  grid-area: tour; }
+
+.video {
+  grid-area: video; }
+  .video > video {
+    height: 250px; }

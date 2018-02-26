@@ -1,0 +1,127 @@
+html {
+  background-color: #fff;
+  color: #000;
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  font-family: 'Advent Pro', sans-serif;
+}
+
+.container {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 120px auto 1fr;
+
+  .nav {
+    text-align: center;
+    font-size: 25px;
+    margin-top: 40px;
+  
+    > a {
+      color: #000;
+      text-decoration: none;
+      transition: all 0.5s ease;
+    }
+
+    &.store {
+      grid-column: 1;
+    
+      a:hover { color: rgb(240,150,84); }
+    }
+    
+    &.ep {
+      grid-column: 2;
+    
+      a:hover { color: rgb(221,130,109); }
+    }
+    
+    &.tour {
+      grid-column: 3;
+    
+      a:hover { color: rgb(160,169,148); }
+    }
+  }
+
+  video {
+    grid-column: 1 / span 3;
+    grid-row: 2;
+    width: 100%;
+  }
+
+  .controls {
+    grid-column: 1 / span 3;
+    grid-row: 3;
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+  
+    > a > img {
+      width: 100px;
+      height: 100px;
+      margin-right: 5px;
+      transition: all 0.5s ease;
+    }
+
+    > a:hover > img {
+      width: 120px;
+      height: 120px;
+      transition: all 0.5s ease;
+    }
+  }
+}
+
+
+@media screen and (min-width: 1024px) {
+  .container {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 300px 1fr;
+    
+    video {
+      grid-column: 1 / span 3;
+      grid-row: 1 / span 2;
+      z-index: -1;
+      position: fixed;
+    }
+
+    .nav {
+      font-size: 45px;
+      
+      > a {
+        color: #fff;
+      }
+    }
+
+    .controls {
+      justify-items: end;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    grid-template-rows: 400px 1fr;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .container {
+    grid-template-rows: 500px 1fr;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .container {
+    grid-template-rows: 600px 1fr;
+  }
+}
+
+@media screen and (min-width: 1800px) {
+  .container {
+    grid-template-rows: 700px 1fr;
+  }
+}
