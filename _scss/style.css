@@ -1,30 +1,72 @@
 html {
-  background-color: blue;
+  background-color: #fff;
   color: #000; }
 
 body {
   box-sizing: border-box;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  font-family: 'Advent Pro', sans-serif; }
 
 .container {
   display: grid;
-  grip-gap: 20px;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 100px 250px 1fr 50px;
-  grid-template-areas: "store ep tour" "video video video" "controls controls controls"; }
+  grid-template-rows: 120px auto 1fr; }
+  .container .nav {
+    text-align: center;
+    font-size: 25px;
+    margin-top: 40px; }
+    .container .nav > a {
+      color: #000;
+      text-decoration: none;
+      transition: all 0.5s ease; }
+    .container .nav.store {
+      grid-column: 1; }
+      .container .nav.store a:hover {
+        color: #f09654; }
+    .container .nav.ep {
+      grid-column: 2; }
+      .container .nav.ep a:hover {
+        color: #dd826d; }
+    .container .nav.tour {
+      grid-column: 3; }
+      .container .nav.tour a:hover {
+        color: #a0a994; }
+  .container video {
+    grid-column: 1 / span 3;
+    grid-row: 2;
+    width: 100%; }
+  .container .controls {
+    grid-column: 1 / span 3;
+    grid-row: 3;
+    display: flex;
+    justify-content: center;
+    margin-top: 100px; }
+    .container .controls > a > img {
+      width: 100px;
+      height: 100px;
+      margin-right: 5px;
+      transition: all 0.5s ease; }
+    .container .controls > a:hover > img {
+      width: 120px;
+      height: 120px;
+      transition: all 0.5s ease; }
 
-.store {
-  background-color: red;
-  grid-area: store; }
+@media screen and (min-width: 1024px) {
+  html, body {
+    background-color: #000; }
 
-.get-the-ep {
-  grid-area: ep; }
-
-.tour {
-  grid-area: tour; }
-
-.video {
-  grid-area: video; }
-  .video > video {
-    height: 250px; }
+  .container {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr auto; }
+    .container video {
+      grid-column: 1 / span 3;
+      grid-row: 1 / span 2;
+      z-index: -1;
+      position: fixed; }
+    .container .nav {
+      font-size: 45px; }
+      .container .nav > a {
+        color: #fff; }
+    .container .controls {
+      justify-items: end; } }
